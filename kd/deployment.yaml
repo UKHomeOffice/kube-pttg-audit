@@ -90,10 +90,11 @@ spec:
         image: quay.io/ukhomeofficedigital/pttg-ip-audit:{{.VERSION}}
         imagePullPolicy: Always
         securityContext:
-           capabilities:
-             drop:
-               - SETUID
-               - SETGID
+          runAsNonRoot: true
+          capabilities:
+            drop:
+             - SETUID
+             - SETGID
         env:
           - name: JAVA_OPTS
             value: '-Xms150m -Xmx250m'
