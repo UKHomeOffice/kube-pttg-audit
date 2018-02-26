@@ -8,8 +8,6 @@ then
     export KUBE_TOKEN=${PROD_KUBE_TOKEN}
 fi
 
-echo;echo;env;echo;echo
-
 cd kd
 kd --insecure-skip-tls-verify \
    -f deployment.yaml \
